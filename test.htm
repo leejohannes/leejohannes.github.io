@@ -1,0 +1,116 @@
+﻿<html>
+<head>
+<title>乌尔都数字测试</title>
+<meta http-equiv="accept-charset" charset="utf-8">
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+function getjson() {
+var radio = new Array();
+for (var i = 1; i <= 10; i++) {//radio box counter
+var radio_name = new String("radio_" + i);
+radio[i - 1] = $('input:radio[name=' + radio_name + ']:checked').val()
+}
+//Array to json String
+var json = JSON.stringify(radio);
+return json;
+}
+function my_confirm() {
+var json = getjson();
+window.location.href = "result.htm?radio=" + 10 + "&json=" + json;
+}
+function click_Play(audioId) {
+ 	var myAuto = document.getElementById(audioId);
+	myAuto.play();
+}
+window.history.pushState(null, null, location.href);
+window.addEventListener('popstate', () => {
+    history.go(1);
+    alert('测试中不可以看课本哦！');
+});
+</script>
+<style>
+	body{
+  		background-color:gray;
+  		font-size:70px;
+  	}
+	input[type="radio"]{
+		margin-left:40px;
+		margin-bottom:30px;
+		width:50px;
+		height:50px;
+	}
+	.play{
+		margin-left:30px;
+		width:280px;
+		height:240px;
+		font-size:90px;
+		background-color:#01411C;
+		color:white;
+	}
+	.Submit{
+		width:300px;
+		height:100px;
+		font-size:70px;
+	}
+	.l1{
+		float:left;
+		width:500px;
+		border-right:3px solid black;
+		}
+</style>
+</head>
+<body>
+<audio src="sound/1to10/Urdu%201%20aik.mp4" id="1"></audio>
+<audio src="sound/1to10/Urdu%202%20dou.mp4" id="2"></audio>
+<audio src="sound/1to10/Urdu%203%20teen.mp4" id="3"></audio>
+<audio src="sound/1to10/Urdu%204%20chaar.mp4" id="4"></audio>
+<audio src="sound/1to10/Urdu%205%20panch.mp4" id="5"></audio>
+<audio src="sound/1to10/Urdu%206%20chay.mp4" id="6"></audio>
+<audio src="sound/1to10/Urdu%207%20saat.mp4" id="7"></audio>
+<audio src="sound/1to10/Urdu%208%20aath.mp4" id="8"></audio>
+<audio src="sound/1to10/Urdu%209%20naw.mp4" id="9"></audio>
+<audio src="sound/1to10/Urdu%2010%20das.mp4" id="10"></audio>
+<center>
+<div class="l1"><input class="play" type="button" onclick="click_Play(9)" value="Q.1"><br>
+<input type="radio" name="radio_1" value="A">9
+<input type="radio" name="radio_1" value="B">7<br/>
+</div>
+<div><input class="play" type="button" onclick="click_Play(4)" value="Q.2"><br>
+<input type="radio" name="radio_2" value="A">4
+<input type="radio" name="radio_2" value="B">8<br/>
+</div>
+<div class="l1"><input class="play" type="button" onclick="click_Play(3)" value="Q.3"><br>
+<input type="radio" name="radio_3" value="A">2
+<input type="radio" name="radio_3" value="B">3<br/>
+</div>
+<div><input class="play" type="button" onclick="click_Play(1)" value="Q.4"><br>
+<input type="radio" name="radio_4" value="A">1
+<input type="radio" name="radio_4" value="B">5<br/>
+</div>
+<div class="l1"><input class="play" type="button" onclick="click_Play(10)" value="Q.5"><br>
+<input type="radio" name="radio_5" value="A">10
+<input type="radio" name="radio_5" value="B">4<br/>
+</div>
+<div><input class="play" type="button" onclick="click_Play(6)" value="Q.6"><br>
+<input type="radio" name="radio_6" value="A">5
+<input type="radio" name="radio_6" value="B">6<br/>
+</div>
+<div class="l1"><input class="play" type="button" onclick="click_Play(5)" value="Q.7"><br>
+<input type="radio" name="radio_7" value="A">1
+<input type="radio" name="radio_7" value="B">5<br/>
+</div>
+<div><input class="play" type="button" onclick="click_Play(2)" value="Q.8"><br>
+<input type="radio" name="radio_8" value="A">2
+<input type="radio" name="radio_8" value="B">8<br/>
+<div class="l1"><input class="play" type="button" onclick="click_Play(8)" value="Q.9"><br>
+<input type="radio" name="radio_9" value="A">8
+<input type="radio" name="radio_9" value="B">9<br/>
+</div>
+<div><input class="play" type="button" onclick="click_Play(7)" value="Q.10"><br>
+<input type="radio" name="radio_10" value="A">10
+<input type="radio" name="radio_10" value="B">7<br/>
+</div>
+<input class="Submit" type="button" onclick="my_confirm()" value="提交">
+</center>
+</body>
+</html>

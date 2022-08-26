@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>您的测试</title>
+<script src="jquery.min.js"></script>
+<script>
+
+//get data in url
+function getUrlParam(name) {
+var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+var r = window.location.search.substr(1).match(reg);
+if (r != null) return unescape(r[2]);
+return null;
+}
+window.onload=function showResult() {
+var answer = ["A", "A", "B", "A", "A", "B", "B", "A", "A", "B"];//correct answer
+var answer_score = [10, 10, 10, 10, 10, 10, 10, 10, 10, 10];//marks per question
+var user_answer = JSON.parse(getUrlParam("json"));//user answer
+var radio_num = parseInt(getUrlParam("radio"));//single selection num
+var radio_result = 0;//correct marks
+var radio_right_num = 0;//correct num
+var result = 0;//marks sum
+var user_answer_result = new Array();//user answer
+for (var i = 0; i < user_answer.length; i++) {
+if (user_answer[i] == answer[i]) {
+if (i < radio_num) {
+radio_result = radio_result + answer_score[i];
+radio_right_num++;
+}
+user_answer_result[i] = "正确";
+} else {
+user_answer_result[i] = "错误";
+}
+}
+result = radio_result;
+//show result
+var show_result1;
+var show_result2;
+var show_result3;
+var show_result4;
+var show_result5;
+show_result1 = "您的测试：";
+for (var i = 0; i < user_answer.length; i++) {
+show_result1 = show_result1 + (i + 1) + "：" + user_answer_result[i] + "；&nbsp;";
+}
+show_result2 = "总题数：" + user_answer.length;
+show_result3 = "正确题数：" + radio_right_num;
+show_result4 = "错误题数：" + (user_answer.length - radio_right_num);
+show_result5 = "得分: " + radio_result
+$("p#show_result1").html(show_result1);
+$("p#show_result2").html(show_result2);
+$("p#show_result3").html(show_result3);
+$("p#show_result4").html(show_result4);
+$("p#show_result5").html(show_result5);
+}
+</script>
+<style>
+	body{
+  		background-color:gray;
+  		font-size:45px;
+  	}
+</style>
+</head>
+<body>
+<center>
+<h1>巴扶Praise</h1>
+<h2>Urdu 1~10</h2>
+<hr/>
+<p id="show_result1">
+<p>
+<hr/>
+<p id="show_result2"></p>
+<p id="show_result3"></p>
+<p id="show_result4"></p>
+<p id="show_result5"></p>
+<a href="index.htm">
+<input style="font-size:50px;width:450px;height:150px;font-weight: bold;"type="button" value="  加油继续巩固！">
+</center>
+</body>
+</html>
