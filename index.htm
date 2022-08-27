@@ -17,11 +17,14 @@
   	body{
   		background-color:gray;
   	}
+  	td{
+  		text-align: center;
+  		}
   	input[type="button"]{
+  		margin-left:170px;
 			margin-bottom:10px;
 			width:280px;
 			height:240px;
-			float:left;
 			border-color: transparent;
 			-webkit-border-radius: 0px 0;
 			background-color: #01411C ;
@@ -34,44 +37,46 @@
 			margin-bottom:10px;
 			width:160px;
 			height:240px;
-			float:left;
 			background-color:white;
 			text-align: center;
 			color:black;
 			font-size:45px;
+			position: absolute;
 			}
-		}
   </style>
 </head>
 <body>
 <center style="font-size:50px;">
 请打开声音点击绿色部分
-</center>
+<table>
+<tbody>
 <tr>
-	<th>
+	<td>
 		<div class="l1">
 			<p>1</p>
 			<p>aik</p>
 		</div>
 		<audio src="sound/1to10/Urdu%201%20aik.mp4" id="1"></audio>
 		<input type="button" onclick="click_Play(1)" value="ایک"/>
-	</th>
-	<th>
+	</td>
+	<td>
 		<div class="l1">
 			<p>2</p>
 			<p>dou</p>
 		</div>
 		<audio src="sound/1to10/Urdu%202%20dou.mp4" id="2"></audio>
 		<input type="button" onclick="click_Play(2)" value="دو"/>
-	</th>
-	<th>
+	</td>
+</tr>
+<tr>
+	<td>
 		<div class="l1">
 			<p>3</p>
 			<p>teen</p>
 		</div>
 		<audio src="sound/1to10/Urdu%203%20teen.mp4" id="3"></audio>
 		<input type="button" onclick="click_Play(3)" value="تین"/>
-	</th>
+	</td>
 	<td>
 		<div class="l1">
 			<p>4</p>
@@ -80,6 +85,8 @@
 		<audio src="sound/1to10/Urdu%204%20chaar.mp4" id="4"></audio>
 		<input type="button" onclick="click_Play(4)" value="چار"/>
 	</td>
+</tr>
+<tr>
 	<td>
 		<div class="l1">
 			<p>5</p>
@@ -96,6 +103,8 @@
 		<audio src="sound/1to10/Urdu%206%20chay.mp4" id="6"></audio>
 		<input type="button" onclick="click_Play(6)" value="چھ"/>
 	</td>
+</tr>
+<tr>
 	<td>
 		<div class="l1">
 			<p>7</p>
@@ -112,6 +121,8 @@
     <audio src="sound/1to10/Urdu%208%20aath.mp4" id="8"></audio>
     <input type="button" onclick="click_Play(8)" value="آٹھ"/>
 	</td>
+</tr>
+<tr>
 	<td>
 		<div class="l1">
 			<p>9</p>
@@ -128,12 +139,17 @@
 		<audio src="sound/1to10/Urdu%2010%20das.mp4" id="10"></audio>
 		<input type="button" onclick="click_Play(10)" value="دس"/>
 	</td>
-	<td>
-		<div class="l1">
+</tr>
+<tr>
+	<td colspan="2">
+		<div class="l1" style="margin-left:210px;">
 			<p style="margin-top:100px;">请</p>
 		</div>
-		<input type="button" onclick="test()" value="测试"/>
+		<input type="button" onclick="test()" value="测试" style="margin-left:82px;"/>
 	</td>
 </tr>
+</tbody>
+</table>
+</center>
 </body>
 </html>

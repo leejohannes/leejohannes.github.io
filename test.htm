@@ -31,8 +31,16 @@ window.addEventListener('popstate', () => {
 </script>
 <style>
 	body{
-  		background-color:gray;
-  		font-size:90px;
+  	background-color:gray;
+  	}
+  table{
+  	border-collapse: collapse;
+  	border-spacing: 0px;
+  	}
+  tr td{
+  	font-size:90px;
+  	text-align: center;
+  	padding: 0px;
   	}
 	input[type="radio"]{
 		margin:40px 5px 40px 40px;
@@ -51,6 +59,7 @@ window.addEventListener('popstate', () => {
 		color:white;
 	}
 	.Submit{
+		margin-left:60px;
 		width:300px;
 		height:100px;
 		font-size:70px;
@@ -74,46 +83,81 @@ window.addEventListener('popstate', () => {
 <audio src="sound/1to10/Urdu%209%20naw.mp4" id="9"></audio>
 <audio src="sound/1to10/Urdu%2010%20das.mp4" id="10"></audio>
 <center>
-<div class="l1"><input class="play" type="button" onclick="click_Play(9)" value="Q.1"><br>
-<input type="radio" name="radio_1" value="A">9
-<input type="radio" name="radio_1" value="B">7<br/>
-</div>
-<div><input class="play" type="button" onclick="click_Play(4)" value="Q.2"><br>
-<input type="radio" name="radio_2" value="A">4
-<input type="radio" name="radio_2" value="B">8<br/>
-</div>
-<div class="l1"><input class="play" type="button" onclick="click_Play(3)" value="Q.3"><br>
-<input type="radio" name="radio_3" value="A">2
-<input type="radio" name="radio_3" value="B">3<br/>
-</div>
-<div><input class="play" type="button" onclick="click_Play(1)" value="Q.4"><br>
-<input type="radio" name="radio_4" value="A">1
-<input type="radio" name="radio_4" value="B">5<br/>
-</div>
-<div class="l1"><input class="play" type="button" onclick="click_Play(10)" value="Q.5"><br>
-<input type="radio" name="radio_5" value="A">10
-<input type="radio" name="radio_5" value="B">4<br/>
-</div>
-<div><input class="play" type="button" onclick="click_Play(6)" value="Q.6"><br>
-<input type="radio" name="radio_6" value="A">5
-<input type="radio" name="radio_6" value="B">6<br/>
-</div>
-<div class="l1"><input class="play" type="button" onclick="click_Play(5)" value="Q.7"><br>
-<input type="radio" name="radio_7" value="A">1
-<input type="radio" name="radio_7" value="B">5<br/>
-</div>
-<div><input class="play" type="button" onclick="click_Play(2)" value="Q.8"><br>
-<input type="radio" name="radio_8" value="A">2
-<input type="radio" name="radio_8" value="B">8<br/>
-<div class="l1"><input class="play" type="button" onclick="click_Play(8)" value="Q.9"><br>
-<input type="radio" name="radio_9" value="A">8
-<input type="radio" name="radio_9" value="B">9<br/>
-</div>
-<div><input class="play" type="button" onclick="click_Play(7)" value="Q.10"><br>
-<input type="radio" name="radio_10" value="A">10
-<input type="radio" name="radio_10" value="B">7<br/>
-</div>
-<input class="Submit" type="button" onclick="my_confirm()" value="提交">
+<table>
+<tbody>
+<tr>
+	<td>
+		<div class="l1"><input class="play" type="button" onclick="click_Play(9)" value="Q.1"><br>
+			<input type="radio" name="radio_1" value="A">9
+			<input type="radio" name="radio_1" value="B">7<br/>
+		</div>
+	</td>
+	<td>
+		<div><input class="play" type="button" onclick="click_Play(4)" value="Q.2"><br>
+			<input type="radio" name="radio_2" value="A">4
+			<input type="radio" name="radio_2" value="B">8<br/>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div class="l1"><input class="play" type="button" onclick="click_Play(3)" value="Q.3"><br>
+			<input type="radio" name="radio_3" value="A">2
+			<input type="radio" name="radio_3" value="B">3<br/>
+		</div>
+	</td>
+	<td>
+		<div><input class="play" type="button" onclick="click_Play(1)" value="Q.4"><br>
+			<input type="radio" name="radio_4" value="A">1
+			<input type="radio" name="radio_4" value="B">5<br/>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div class="l1"><input class="play" type="button" onclick="click_Play(10)" value="Q.5"><br>
+			<input type="radio" name="radio_5" value="A">10
+			<input type="radio" name="radio_5" value="B">4<br/>
+		</div>
+	</td>
+	<td>
+		<div><input class="play" type="button" onclick="click_Play(6)" value="Q.6"><br>
+			<input type="radio" name="radio_6" value="A">5
+			<input type="radio" name="radio_6" value="B">6<br/>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div class="l1"><input class="play" type="button" onclick="click_Play(5)" value="Q.7"><br>
+			<input type="radio" name="radio_7" value="A">1
+			<input type="radio" name="radio_7" value="B">5<br/>
+		</div>
+	</td>
+	<td>
+		<div><input class="play" type="button" onclick="click_Play(2)" value="Q.8"><br>
+			<input type="radio" name="radio_8" value="A">2
+			<input type="radio" name="radio_8" value="B">8<br/>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>
+		<div class="l1"><input class="play" type="button" onclick="click_Play(8)" value="Q.9"><br>
+			<input type="radio" name="radio_9" value="A">8
+			<input type="radio" name="radio_9" value="B">9<br/>
+		</div>
+	</td>
+	<td>
+		<div><input class="play" type="button" onclick="click_Play(7)" value="Q.10"><br>
+			<input type="radio" name="radio_10" value="A">10
+			<input type="radio" name="radio_10" value="B">7<br/>
+		</div>
+	</td>
+</tr>
+<tr><td colspan="2"><input class="Submit" type="button" onclick="my_confirm()" value="提交"></td></tr>
+</tbody>
+</table>
 </center>
 </body>
 </html>
